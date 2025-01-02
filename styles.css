@@ -79,6 +79,7 @@ body {
 
 /* Adjust logo size */
 .logo {
+  position: relative;
   width: 30px; /* Adjust the width as needed */
   height: auto; /* Maintain the aspect ratio */
   object-fit: contain; /* Ensure it fits nicely within its bounds */
@@ -86,16 +87,38 @@ body {
   display: block; /* Ensure proper centering */
 }
 
-/* Social Links */
+/* Center the header content */
+header {
+  text-align: center;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+/* Center the social links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .social-links a {
-  color: #333;
+  color: #000; /* Icon color */
+  margin: 0 10px; /* Space between icons */
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .social-links a:hover {
-  color: #1e90ff;
+  color: #007bff; /* Change color on hover */
 }
+
+header img.logo {
+  display: block;
+  margin: 0 auto;
+  width: 80px; /* Adjust logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
 
 
 
@@ -110,11 +133,12 @@ body {
   }
 }
 
-.card, .btn {
+.card {
   border-radius: 15px; /* Adjust this value for more or less rounding */
 }
 
 .card-header {
+  
   border-radius: 10px 10px 0 0;
 }
 
