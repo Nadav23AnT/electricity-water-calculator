@@ -77,6 +77,23 @@ body {
 }
 
 
+/* Logo Styling */
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Social Links */
+.social-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #1e90ff;
+}
 
 
 
