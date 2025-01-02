@@ -108,8 +108,8 @@ body {
   }
 }
 
-.card {
-  border-radius: 10px;
+.card, .btn {
+  border-radius: 15px; /* Adjust this value for more or less rounding */
 }
 
 .card-header {
@@ -138,4 +138,12 @@ body {
 
 .table {
   font-size: 0.9rem; /* Make the text smaller to fit better */
+}
+
+/* Round the corners of the result and history tables */
+
+
+.card, .btn, .alert, .table {
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
 }
