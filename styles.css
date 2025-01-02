@@ -77,11 +77,13 @@ body {
 }
 
 
-/* Logo Styling */
+/* Adjust logo size */
 .logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  width: 120px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: contain; /* Ensure it fits nicely within its bounds */
+  margin: 0 auto; /* Center the logo */
+  display: block; /* Ensure proper centering */
 }
 
 /* Social Links */

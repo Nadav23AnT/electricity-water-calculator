@@ -163,3 +163,57 @@ window.onload = function () {
 
 // Save data when the Calculate button is clicked
 document.getElementById("calculateBtn").addEventListener("click", saveUserData);
+
+// Set a cookie
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
+
+// Get a cookie value
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) return decodeURIComponent(value);
+  }
+  return null;
+}
+
+// Save user input data in cookies
+function saveUserData() {
+  // Get input values
+  const prevElectricity = document.getElementById("prevElectricity").value;
+  const currElectricity = document.getElementById("currElectricity").value;
+  const prevWater = document.getElementById("prevWater").value;
+  const currWater = document.getElementById("currWater").value;
+
+  // Save each input to a cookie
+  setCookie("prevElectricity", prevElectricity, 30); // Save for 30 days
+  setCookie("currElectricity", currElectricity, 30);
+  setCookie("prevWater", prevWater, 30);
+  setCookie("currWater", currWater, 30);
+}
+
+// Load user input data from cookies
+function loadUserData() {
+  // Get cookie values
+  const prevElectricity = getCookie("prevElectricity");
+  const currElectricity = getCookie("currElectricity");
+  const prevWater = getCookie("prevWater");
+  const currWater = getCookie("currWater");
+
+  // Populate input fields with cookie values if they exist
+  if (prevElectricity) document.getElementById("prevElectricity").value = prevElectricity;
+  if (currElectricity) document.getElementById("currElectricity").value = currElectricity;
+  if (prevWater) document.getElementById("prevWater").value = prevWater;
+  if (currWater) document.getElementById("currWater").value = currWater;
+}
+
+// Automatically load data when the page loads
+window.onload = function () {
+  loadUserData();
+};
+
+// Save data when the Calculate button is clicked
+document.getElementById("calculateBtn").addEventListener("click", saveUserData);
